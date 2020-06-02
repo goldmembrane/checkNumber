@@ -1,33 +1,16 @@
 import React from 'react';
 
+const Calculater = (props) => (
+  <div className = 'main-box'>
+    <div className = 'formular-box'>{props.formular}</div>
+    <button className = 'startBtn' onClick = {() => props.create(props.formular)}>Start!</button>
+    <button className = 'answer' onClick = {() => {props.create(props.formular); props.below(props.formular)}}></button>
+    <button className = 'answer' onClick = {() => {props.create(props.formular); props.correct(props.formular)}}></button>
+    <button className = 'answer' onClick = {() => {props.create(props.formular); props.among(props.formular)}}></button>
+  </div>
+)
 
-class Calculater extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        randomNumber: 0,
-        operator: {
-            1: '+',
-            2: '-',
-            3: '*',
-        },
-        formulars: null,
-    }
-  }
-  createRandom() {
-    this.setState({randomNumber: 
-      Math.floor(Math.random() * 99) + 1});
-  };
-
-  createFormular() {
-    let formular = 
-      `${this.state.randomNumber} + ${this.state.operator[Math.floor(Math.random() * 4) + 1]} +
-       ${this.state.randomNumber} + ${this.state.operator[Math.floor(Math.random() * 4) + 1]} +
-       ${this.state.randomNumber}`
-    
-    this.setState({formulars: formular});
-  }
-
-}
+// isWrong의 갯수가 3이상이면
+// game over 창을 띄운다.
 
 export default Calculater;
