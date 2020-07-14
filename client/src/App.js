@@ -1,5 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
+import GameOver from './GameOver';
 
 
 class App extends React.Component {
@@ -14,16 +15,8 @@ class App extends React.Component {
           2: '-',
         },
         isRight: 0,
-        wrong: 0,
+        isWrong: 0,
     }
-  }
-
-  componentDidMount() {
-    this.setState({ formular: `${Math.floor(Math.random() * this.state.randomNumber) + 1}
-    ${this.state.operator[Math.floor(Math.random() * 2) + 1]}
-    ${Math.floor(Math.random() * this.state.randomNumber) + 1}
-    ${this.state.operator[Math.floor(Math.random() * 2) + 1]}
-    ${Math.floor(Math.random() * this.state.randomNumber) + 1}`})
   }
 
   setNumber() {
@@ -43,52 +36,33 @@ class App extends React.Component {
     );
   };
 
-  incrementRight = () => {
-    this.setState({ isRight: this.state.isRight + 1 });
-  }
-
-  incrementWrong = () => {
-    this.setState({ isWrong: this.state.isWrong + 1 });
-  }
-
-  checkAnswer(value) {
-    if ( eval(this.state.formular) === value ) {
-      this.setState((state, props) => ({
-        isRight: state.isRight + props.incrementRight
-      }));
+  checkAnswer() {
+    if ( eval(this.state.formular) === this.state.number ) {
+      this.setState({ isRight: this.state.isRight + 1});
     }else {
-      this.setState((state, props) => ({
-        isWrong: state.isWrong + props.incrementWrong
-      }));
+      this.setState({ isWrong: this.state.isWrong + 1});
     }
   }
 
-  checkAnswerBelowNumber(value) {
-    if ( eval(this.state.formular) < value ) {
-      this.setState((state, props) => ({
-        isRight: state.isRight + props.incrementRight
-      }));
+  checkAnswerBelowNumber() {
+    if ( eval(this.state.formular) < this.state.number ) {
+      this.setState({ isRight: this.state.isRight + 1});
     }else {
-      this.setState((state, props) => ({
-        isWrong: state.isWrong + props.incrementWrong
-      }));
+      this.setState({ isWrong: this.state.isWrong + 1});
     }
   }
 
-  checkAnswerAmongNumber(value) {
-    if ( eval(this.state.formular) > value ) {
-      this.setState((state, props) => ({
-        isRight: state.isRight + props.incrementRight
-      }));
+  checkAnswerAmongNumber() {
+    if ( eval(this.state.formular) > this.state.number ) {
+      this.setState({ isRight: this.state.isRight + 1});
     }else {
-      this.setState((state, props) => ({
-        isWrong: state.isWrong + props.incrementWrong
-      }));
+      this.setState({ isWrong: this.state.isWrong + 1});
     }
   }
 
   render() {
       return (
+        this.state.isWrong < 4 ? (
           <div>
               <Nav 
               set = {this.setNumber.bind(this)} 
@@ -100,6 +74,13 @@ class App extends React.Component {
               among = {this.checkAnswerAmongNumber.bind(this)}
               />
           </div>
+        ) : (
+          <div>
+            <GameOver 
+            score = {this.state.isRight}
+            />
+          </div>
+        )
       )
   }
 }
