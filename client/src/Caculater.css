@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-box {
+  margin-top: 30px;
+  height: 120px;
+}
+
+.formular-box {
+  width: 200px;
+  height: 75px;
+  font-size: 30px;
+  line-height: 75px;
+  margin-left: 85px;
+}
+
+.startBtn {
+  display: block;
+  width: 50px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 20px;
+  margin-left: 125px;
+  margin-bottom: 20px;
+}
+
+.answer {
+  display: inline-block;
+  width: 40px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 17px;
+}
+
+.an1 {
+  margin-left: 90px;
+}
