@@ -1,6 +1,6 @@
 import React from "react";
-import Nav from "./Nav";
-import GameOver from "./GameOver";
+import Nav from "./game/Nav";
+import GameOver from "./game/GameOver";
 
 class App extends React.Component {
   constructor(props) {
