@@ -5,9 +5,6 @@ const Calculater = (props) => {
   return props.number ? (
     <div className="main-box">
       <div className="formular-box">{props.formular}</div>
-      <button className="startBtn" onClick={() => props.create(props.formular)}>
-        Start!
-      </button>
       <button
         className="answer an1"
         onClick={() => {

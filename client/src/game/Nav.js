@@ -8,17 +8,29 @@ function setRandomNumber(props) {
   return (
     <div className="setRandomNumber">
       <div className="printNumber">{props.number}</div>
-      <button className="settingBtn" onClick={() => props.set(props.number)}>
-        Set Number!
-      </button>
-      <Calculater
-        number={props.number}
-        create={props.create}
-        formular={props.formular}
-        correct={props.correct}
-        below={props.below}
-        among={props.among}
-      />
+      {!props.number ? (
+        <button className="settingBtn" onClick={() => props.set(props.number)}>
+          Set Number!
+        </button>
+      ) : null}
+      {props.number ? (
+        <div>
+          <button
+            className="startBtn"
+            onClick={() => props.create(props.formular)}
+          >
+            Start!
+          </button>
+          <Calculater
+            number={props.number}
+            create={props.create}
+            formular={props.formular}
+            correct={props.correct}
+            below={props.below}
+            among={props.among}
+          />
+        </div>
+      ) : null}
     </div>
   );
 }
