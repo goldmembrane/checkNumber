@@ -57,7 +57,7 @@ class App extends React.Component {
   }
 
   render() {
-    return this.state.isWrong < 4 ? (
+    return this.state.isWrong < 3 ? (
       <div>
         <Nav
           set={this.setNumber.bind(this)}
