@@ -16,11 +16,15 @@
 
 .settingBtn {
   margin-left: 10px;
-  margin-top: 380px;
+  margin-top: 300px;
   width: 300px;
   height: 100px;
   font-size: 36px;
   text-align: center;
+  cursor: pointer;
+  border: none;
+  background-color: red;
+  color: white;
 }
 
 .startBtn {
@@ -29,7 +33,11 @@
   font-size: 48px;
   margin-left: 10px;
   margin-bottom: 20px;
-  margin-top: 380px;
+  margin-top: 300px;
   width: 300px;
   height: 100px;
+  cursor: pointer;
+  border: none;
+  background-color: green;
+  color: white;
 }
