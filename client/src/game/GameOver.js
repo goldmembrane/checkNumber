@@ -1,14 +1,17 @@
 import React from "react";
 import "./css/GameOver.css";
+import { withRouter } from "react-router-dom";
 
 const GameOver = (props) => {
-  return (
+  return props.defeat > 2 ? (
     <div className="game-over-box">
       <div className="game-over">Game Over</div>
       <div className="score">your score: {props.score}</div>
-      <p className="return">다시 하려면 새로고침 해주세요!</p>
+      <button className="return" onClick={props.clear}>
+        try again!
+      </button>
     </div>
-  );
+  ) : null;
 };
 
-export default GameOver;
+export default withRouter(GameOver);
