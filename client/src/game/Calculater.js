@@ -12,7 +12,7 @@ const Calculater = (props) => {
           props.below();
         }}
       >
-        낮다
+        &lt;
       </button>
       <button
         className="answer"
@@ -21,7 +21,7 @@ const Calculater = (props) => {
           props.correct();
         }}
       >
-        맞다
+        O
       </button>
       <button
         className="answer"
@@ -30,7 +30,7 @@ const Calculater = (props) => {
           props.among();
         }}
       >
-        높다
+        &gt;
       </button>
     </div>
   ) : null;
