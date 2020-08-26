@@ -1,9 +1,26 @@
 import React from "react";
 import "./css/Caculater.css";
+import Timer from "react-compound-timer";
 
 const Calculater = (props) => {
   return props.number ? (
     <div className="main-box">
+      <Timer
+        initialTime={60000}
+        direction="backward"
+        checkpoints={[
+          {
+            time: 60000,
+            callback: () => props.over,
+          },
+        ]}
+      >
+        {() => (
+          <React.Fragment>
+            <Timer.Seconds />
+          </React.Fragment>
+        )}
+      </Timer>
       <div className="formular-box">{props.formular}</div>
       <button
         className="among"
