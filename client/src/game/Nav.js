@@ -21,14 +21,16 @@ function setRandomNumber(props) {
               Start!
             </button>
           ) : null}
-          <Calculater
-            number={props.number}
-            create={props.create}
-            formular={props.formular}
-            correct={props.correct}
-            below={props.below}
-            among={props.among}
-          />
+          {props.formular ? (
+            <Calculater
+              number={props.number}
+              create={props.create}
+              formular={props.formular}
+              correct={props.correct}
+              below={props.below}
+              among={props.among}
+            />
+          ) : null}
         </div>
       ) : null}
     </div>
