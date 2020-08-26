@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./game/Nav";
 import GameOver from "./game/GameOver";
+import RankingPage from "./game/RankingPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class App extends React.Component {
       },
       isRight: 0,
       isWrong: 0,
+      isRankingOpen: false,
     };
   }
 
@@ -56,6 +58,12 @@ class App extends React.Component {
     }
   }
 
+  handleRankingButtonClick() {
+    this.setState((prevState) => ({
+      isRankingOpen: !prevState.isRankingOpen,
+    }));
+  }
+
   render() {
     return this.state.isWrong < 3 ? (
       <div>
@@ -67,6 +75,12 @@ class App extends React.Component {
           correct={this.checkAnswer.bind(this)}
           below={this.checkAnswerBelowNumber.bind(this)}
           among={this.checkAnswerAmongNumber.bind(this)}
+          open={this.handleRankingButtonClick.bind(this)}
+          isOpen={this.state.isRankingOpen}
+        />
+        <RankingPage
+          isOpen={this.state.isRankingOpen}
+          open={this.handleRankingButtonClick.bind(this)}
         />
       </div>
     ) : (

@@ -22,6 +22,11 @@ function setRandomNumber(props) {
           </div>
         )}
       </Popup>
+      {!props.isOpen ? (
+        <button className="btn btn-light" onClick={props.open}>
+          Rank
+        </button>
+      ) : null}
       <div className="printNumber">{props.number}</div>
       {!props.number ? (
         <button className="settingBtn" onClick={() => props.set(props.number)}>
