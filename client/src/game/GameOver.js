@@ -1,6 +1,5 @@
 import React from "react";
 import "./css/GameOver.css";
-import Nav from "./Nav";
 
 const GameOver = (props) => {
   return (

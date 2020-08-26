@@ -6,13 +6,13 @@ const Calculater = (props) => {
     <div className="main-box">
       <div className="formular-box">{props.formular}</div>
       <button
-        className="answer an1"
+        className="among"
         onClick={() => {
           props.create(props.formular);
-          props.below();
+          props.among();
         }}
       >
-        &lt;
+        <span className="up">Up!</span>
       </button>
       <button
         className="answer"
@@ -21,22 +21,19 @@ const Calculater = (props) => {
           props.correct();
         }}
       >
-        O
+        Correct!
       </button>
       <button
-        className="answer"
+        className="below"
         onClick={() => {
           props.create(props.formular);
-          props.among();
+          props.below();
         }}
       >
-        &gt;
+        <span className="down">Down!</span>
       </button>
     </div>
   ) : null;
 };
-
-// isWrong의 갯수가 3이상이면
-// game over 창을 띄운다.
 
 export default Calculater;
