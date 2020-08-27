@@ -22,7 +22,12 @@ const Calculater = (props) => {
           </React.Fragment>
         )}
       </Timer>
-      <div className="formular-box">{props.formular}</div>
+      <div className="formular-box">
+        {eval(props.formular) > props.number - 10 &&
+        eval(props.formular) < props.number + 10
+          ? props.formular
+          : props.create(props.formular)}
+      </div>
       <button
         className="among"
         onClick={() => {
