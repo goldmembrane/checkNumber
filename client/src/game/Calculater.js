@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/Caculater.css";
-import Timer from "react-compound-timer";
+import Countdown from "react-countdown";
 import Good from "./Good";
 import Bad from "./Bad";
 
@@ -9,22 +9,10 @@ const Calculater = (props) => {
     <div className="main-box">
       <div className="timer">
         <div className="clock"></div>
-        <Timer
-          initialTime={62000}
-          direction="backward"
-          checkpoints={[
-            {
-              time: 0,
-              callback: () => props.over(),
-            },
-          ]}
-        >
-          {() => (
-            <React.Fragment>
-              <Timer.Seconds />
-            </React.Fragment>
-          )}
-        </Timer>
+        <Countdown
+          date={Date.now() + 59000}
+          onComplete={() => props.over()}
+        ></Countdown>
       </div>
       <div className="formular-box">
         {eval(props.formular) > props.number - 10 &&
