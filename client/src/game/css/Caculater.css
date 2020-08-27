@@ -2,38 +2,63 @@
   margin: 0;
   padding: 0;
 }
-
+.main-box {
+  width: 100%;
+  margin: 0 auto;
+}
 .formular-box {
   width: 600px;
   height: 250px;
   font-size: 50px;
-  line-height: 250px;
+  line-height: 210px;
   border: 20px solid burlywood;
   background-color: green;
   text-align: center;
   color: white;
-  margin-left: -170px;
+  margin-left: -160px;
 }
 
 .among {
   width: 0;
   height: 0;
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 32px;
   line-height: 90px;
   cursor: pointer;
   border-top: 50px none;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
   border-bottom: 75px solid yellowgreen;
-  margin-left: 50px;
   background-color: white;
   text-align: center;
+  outline: none;
+  transition: all 0.1s;
+  margin-left: -10px;
+}
+
+.among:hover {
+  border-top: 50px none;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 75px solid rgb(98, 204, 27);
+}
+
+.among:active {
+  border-top: 50px none;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 75px solid green;
+  transform: translateY(3px);
+  outline: none;
+}
+
+.among:focus {
+  outline: none;
 }
 
 .answer {
   margin-top: 10px;
-  width: 200px;
+  width: 300px;
   height: 80px;
   line-height: 80px;
   text-align: center;
@@ -41,7 +66,24 @@
   cursor: pointer;
   border: none;
   background-color: yellowgreen;
-  margin-left: 50px;
+  outline: none;
+  border-radius: 30px;
+  transition: all 0.1s;
+  margin-left: -10px;
+}
+
+.answer:hover {
+  background-color: rgb(98, 204, 27);
+}
+
+.answer:active {
+  background-color: green;
+  outline: none;
+  transform: translateY(3px);
+}
+
+.answer:focus {
+  outline: none;
 }
 
 .below {
@@ -51,20 +93,62 @@
   font-size: 32px;
   cursor: pointer;
   border-bottom: 50px none;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
   border-top: 75px solid yellowgreen;
   background-color: white;
-  margin-left: 50px;
   position: relative;
+  transition: all 0.1s;
+  margin-left: -10px;
+}
+
+.below:hover {
+  border-bottom: 50px none;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 75px solid rgb(98, 204, 27);
+}
+
+.below:active {
+  border-bottom: 50px none;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 75px solid green;
+  outline: none;
+  transform: translateY(3px);
+}
+
+.below:focus {
+  outline: none;
 }
 
 .up {
-  margin-left: -25px;
+  margin-left: -20px;
 }
 
 .down {
-  margin-left: -45px;
+  margin-left: -20px;
   position: absolute;
   top: -70px;
+}
+
+.timer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  font-size: 36px;
+}
+
+.clock {
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 100px;
+  height: 100px;
+  z-index: -1;
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 100%;
 }

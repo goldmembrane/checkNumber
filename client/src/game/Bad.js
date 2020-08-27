@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Bad.css";
 
 const Bad = (props) => {
   return (

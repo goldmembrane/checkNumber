@@ -1,6 +1,6 @@
 import React from "react";
 import Calculater from "./Calculater";
-import "./css/Nav.css";
+import "./css/Nav.scss";
 import Popup from "reactjs-popup";
 import Description from "./Description";
 
@@ -27,7 +27,7 @@ function setRandomNumber(props) {
           Rank
         </button>
       ) : null}
-      <div className="printNumber">{props.number}</div>
+
       {!props.number ? (
         <button className="settingBtn" onClick={() => props.set(props.number)}>
           Set Number!
@@ -36,12 +36,23 @@ function setRandomNumber(props) {
       {props.number ? (
         <div>
           {!props.formular ? (
-            <button
-              className="startBtn"
-              onClick={() => props.create(props.formular)}
-            >
-              Start!
-            </button>
+            <div>
+              <div className="printNumber">{props.number}</div>
+              <button
+                className="startBtn"
+                onClick={() => props.create(props.formular)}
+              >
+                Start!
+                <span className="startBtn__inner">
+                  <span className="startBtn__blobs">
+                    <span className="startBtn__blob"></span>
+                    <span className="startBtn__blob"></span>
+                    <span className="startBtn__blob"></span>
+                    <span className="startBtn__blob"></span>
+                  </span>
+                </span>
+              </button>
+            </div>
           ) : null}
           {props.formular ? (
             <Calculater

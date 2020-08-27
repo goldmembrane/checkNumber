@@ -7,23 +7,25 @@ import Bad from "./Bad";
 const Calculater = (props) => {
   return props.number ? (
     <div className="main-box">
-      <Timer
-        className="timer"
-        initialTime={62000}
-        direction="backward"
-        checkpoints={[
-          {
-            time: 0,
-            callback: () => props.over(),
-          },
-        ]}
-      >
-        {() => (
-          <React.Fragment>
-            <Timer.Seconds />
-          </React.Fragment>
-        )}
-      </Timer>
+      <div className="timer">
+        <div className="clock"></div>
+        <Timer
+          initialTime={62000}
+          direction="backward"
+          checkpoints={[
+            {
+              time: 0,
+              callback: () => props.over(),
+            },
+          ]}
+        >
+          {() => (
+            <React.Fragment>
+              <Timer.Seconds />
+            </React.Fragment>
+          )}
+        </Timer>
+      </div>
       <div className="formular-box">
         {eval(props.formular) > props.number - 10 &&
         eval(props.formular) < props.number + 10
@@ -37,7 +39,7 @@ const Calculater = (props) => {
           props.among();
         }}
       >
-        <span className="up">Up!</span>
+        <span className="up">{props.number}&#8593;</span>
       </button>
       <button
         className="answer"
@@ -46,7 +48,7 @@ const Calculater = (props) => {
           props.correct();
         }}
       >
-        Correct!
+        {props.number}
       </button>
       <button
         className="below"
@@ -55,7 +57,7 @@ const Calculater = (props) => {
           props.below();
         }}
       >
-        <span className="down">Down!</span>
+        <span className="down">{props.number}&#8595;</span>
       </button>
 
       {props.result === "o" ? (

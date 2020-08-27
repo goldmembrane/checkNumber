@@ -1,4 +1,5 @@
 import React from "react";
+import "./css/Good.css";
 
 const Good = (props) => {
   return (
