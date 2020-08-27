@@ -6,12 +6,13 @@ const Calculater = (props) => {
   return props.number ? (
     <div className="main-box">
       <Timer
-        initialTime={60000}
+        className="timer"
+        initialTime={62000}
         direction="backward"
         checkpoints={[
           {
-            time: 60000,
-            callback: () => props.over,
+            time: 0,
+            callback: () => props.over(),
           },
         ]}
       >
