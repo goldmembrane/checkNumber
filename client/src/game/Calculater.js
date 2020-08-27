@@ -1,6 +1,8 @@
 import React from "react";
 import "./css/Caculater.css";
 import Timer from "react-compound-timer";
+import Good from "./Good";
+import Bad from "./Bad";
 
 const Calculater = (props) => {
   return props.number ? (
@@ -55,6 +57,17 @@ const Calculater = (props) => {
       >
         <span className="down">Down!</span>
       </button>
+
+      {props.result === "o" ? (
+        <div>
+          <Good />
+        </div>
+      ) : null}
+      {props.result === "x" ? (
+        <div>
+          <Bad />
+        </div>
+      ) : null}
     </div>
   ) : null;
 };
