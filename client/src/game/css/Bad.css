@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.bad-animation {
+  position: absolute;
+  top: 0;
+  left: 700px;
+  width: 200px;
+}
+
+.oops {
+  font-size: 64px;
+  font-weight: bold;
+  color: red;
+}

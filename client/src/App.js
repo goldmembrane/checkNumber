@@ -93,6 +93,7 @@ class App extends React.Component {
       isWrong: 0,
       isRight: 0,
       formular: null,
+      result: "",
     });
   }
 
