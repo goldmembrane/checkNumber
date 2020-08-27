@@ -17,6 +17,7 @@ class App extends React.Component {
       isRight: 0,
       isWrong: 0,
       isRankingOpen: false,
+      result: "",
     };
   }
 
@@ -40,25 +41,43 @@ class App extends React.Component {
 
   checkAnswer() {
     if (eval(this.state.formular) === this.state.number) {
-      this.setState({ isRight: this.state.isRight + 1 });
+      this.setState((prevState) => ({
+        isRight: prevState.isRight + 1,
+        result: "o",
+      }));
     } else {
-      this.setState({ isWrong: this.state.isWrong + 1 });
+      this.setState((prevState) => ({
+        isWrong: prevState.isWrong + 1,
+        result: "x",
+      }));
     }
   }
 
   checkAnswerBelowNumber() {
     if (eval(this.state.formular) < this.state.number) {
-      this.setState({ isRight: this.state.isRight + 1 });
+      this.setState((prevState) => ({
+        isRight: prevState.isRight + 1,
+        result: "o",
+      }));
     } else {
-      this.setState({ isWrong: this.state.isWrong + 1 });
+      this.setState((prevState) => ({
+        isWrong: prevState.isWrong + 1,
+        result: "x",
+      }));
     }
   }
 
   checkAnswerAmongNumber() {
     if (eval(this.state.formular) > this.state.number) {
-      this.setState({ isRight: this.state.isRight + 1 });
+      this.setState((prevState) => ({
+        isRight: prevState.isRight + 1,
+        result: "o",
+      }));
     } else {
-      this.setState({ isWrong: this.state.isWrong + 1 });
+      this.setState((prevState) => ({
+        isWrong: prevState.isWrong + 1,
+        result: "x",
+      }));
     }
   }
 
@@ -98,8 +117,9 @@ class App extends React.Component {
               open={this.handleRankingButtonClick.bind(this)}
               isOpen={this.state.isRankingOpen}
               wrong={this.state.isWrong}
-              score={this.state.isRight}
+              right={this.state.isRight}
               over={this.gotoGameOver.bind(this)}
+              result={this.state.result}
             />
             <RankingPage
               isOpen={this.state.isRankingOpen}

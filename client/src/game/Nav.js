@@ -53,6 +53,8 @@ function setRandomNumber(props) {
               among={props.among}
               over={props.over}
               wrong={props.wrong}
+              right={props.right}
+              result={props.result}
             />
           ) : null}
         </div>
