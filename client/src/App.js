@@ -34,6 +34,10 @@ class App extends React.Component {
     });
   }
 
+  gotoGameOver() {
+    this.setState({ isWrong: this.state.isWrong + 3 });
+  }
+
   checkAnswer() {
     if (eval(this.state.formular) === this.state.number) {
       this.setState({ isRight: this.state.isRight + 1 });
@@ -69,6 +73,7 @@ class App extends React.Component {
       number: 0,
       isWrong: 0,
       isRight: 0,
+      formular: null,
     });
   }
 
@@ -94,6 +99,7 @@ class App extends React.Component {
               isOpen={this.state.isRankingOpen}
               wrong={this.state.isWrong}
               score={this.state.isRight}
+              over={this.gotoGameOver.bind(this)}
             />
             <RankingPage
               isOpen={this.state.isRankingOpen}

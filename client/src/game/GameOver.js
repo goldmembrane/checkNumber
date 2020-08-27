@@ -1,6 +1,5 @@
 import React from "react";
 import "./css/GameOver.css";
-import { withRouter } from "react-router-dom";
 
 const GameOver = (props) => {
   return props.defeat > 2 ? (
@@ -14,4 +13,4 @@ const GameOver = (props) => {
   ) : null;
 };
 
-export default withRouter(GameOver);
+export default GameOver;
