@@ -9,8 +9,8 @@ const RankingPage = (props) => {
       <div className="sidebar">
         <h1>Ranking</h1>
         <hr />
-        {props.rank.map((rank) => (
-          <Ranking rank={rank} />
+        {props.rank.map((rank, i) => (
+          <Ranking key={i} rank={rank} />
         ))}
       </div>
     </div>
