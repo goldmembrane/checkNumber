@@ -3,7 +3,7 @@ const router = express.Router();
 
 const { RankController } = require("../controller");
 
-router.get("/rank/get", RankController.get());
-router.post("/rank/post", RankController.post());
+router.get("/get", RankController.get);
+router.post("/post", RankController.post);
 
 module.exports = router;
