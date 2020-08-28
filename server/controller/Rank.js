@@ -21,7 +21,7 @@ module.exports = {
   get: (req, res) => {
     Rank.findAll({
       limit: 7,
-      order: "score desc",
+      order: [["score", "DESC"]],
     })
       .then((data) => {
         res.status(200).json(data).end();
