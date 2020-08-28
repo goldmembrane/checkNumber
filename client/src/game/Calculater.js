@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/Caculater.css";
-import Countdown from "react-countdown";
+import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import Good from "./Good";
 import Bad from "./Bad";
 
@@ -8,8 +8,14 @@ const Calculater = (props) => {
   return props.number ? (
     <div className="main-box">
       <div className="timer">
-        <div className="clock"></div>
-        <Countdown date={Date.now() + 59000} onComplete={() => props.over()} />
+        <CountdownCircleTimer
+          isPlaying
+          duration={60}
+          colors={[["#004777", 0.33], ["#F7B801", 0.33], ["#A30000"]]}
+          onComplete={() => props.over()}
+          size={150}
+          strokeWidth={20}
+        />
       </div>
       <div className="formular-box">
         {eval(props.formular) > props.number - 10 &&

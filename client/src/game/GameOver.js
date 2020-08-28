@@ -28,15 +28,10 @@ const GameOver = (props) => {
               .catch((error) => {
                 console.log(error);
               });
+            props.clear();
           }}
         >
           Save score!
-        </button>
-      </div>
-      <div className="return-box2">
-        <span className="temporary2">Try again!</span>
-        <button className="return" onClick={props.clear}>
-          Try again!
         </button>
       </div>
     </div>

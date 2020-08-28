@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "./game/Nav";
 import RankingPage from "./game/RankingPage";
 import GameOver from "./game/GameOver";
+import * as get from "./game/modules/GetRanks";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,7 +19,14 @@ class App extends React.Component {
       isWrong: 0,
       isRankingOpen: false,
       result: "",
+      fetching: false,
+      rank: [],
     };
+    this.fetchRanks = this.fetchRanks.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchRanks();
   }
 
   setNumber() {
@@ -97,6 +105,19 @@ class App extends React.Component {
     });
   }
 
+  fetchRanks = async () => {
+    this.setState({
+      fetching: true,
+    });
+    const ranks = await get.getRanks();
+    console.log(ranks);
+
+    this.setState({
+      rank: this.state.rank.concat(ranks.data),
+      fetching: false,
+    });
+  };
+
   render() {
     return (
       <div>
@@ -125,6 +146,7 @@ class App extends React.Component {
             <RankingPage
               isOpen={this.state.isRankingOpen}
               open={this.handleRankingButtonClick.bind(this)}
+              rank={this.state.rank}
             />
           </div>
         ) : null}
