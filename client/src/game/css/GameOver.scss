@@ -36,7 +36,7 @@
   line-height: 100px;
 }
 
-.return-box {
+.save-box {
   position: relative;
   width: 200px;
   height: 100px;
@@ -78,7 +78,7 @@
   }
 }
 
-.temporary {
+.save-temporary {
   position: absolute;
   color: #000;
   text-align: center;
@@ -137,4 +137,8 @@
     -webkit-mask-position: 0 0;
     mask-position: 0 0;
   }
+}
+
+.save-temporary:visited {
+  display: none;
 }

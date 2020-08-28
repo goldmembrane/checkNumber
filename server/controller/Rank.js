@@ -10,7 +10,7 @@ module.exports = {
       score: score,
     })
       .then((data) => {
-        res.status(201).send("Save Success").end();
+        res.status(201).json({ message: "Save Success" }).end();
       })
       .catch((error) => {
         console.log(error);

@@ -9,10 +9,7 @@ const Calculater = (props) => {
     <div className="main-box">
       <div className="timer">
         <div className="clock"></div>
-        <Countdown
-          date={Date.now() + 59000}
-          onComplete={() => props.over()}
-        ></Countdown>
+        <Countdown date={Date.now() + 59000} onComplete={() => props.over()} />
       </div>
       <div className="formular-box">
         {eval(props.formular) > props.number - 10 &&
