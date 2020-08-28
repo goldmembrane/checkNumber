@@ -12,7 +12,7 @@ app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: ["http://checknumber.s3-website.ap-northeast-2.amazonaws.com/"],
+    origin: ["http://checknumber.s3-website.ap-northeast-2.amazonaws.com"],
     methods: ["GET", "POST"],
     credentials: true,
   })
