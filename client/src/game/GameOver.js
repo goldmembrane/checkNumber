@@ -34,7 +34,7 @@ class GameOver extends React.Component {
             className="save"
             onClick={(e) => {
               e.preventDefault();
-              fetch("http://localhost:8000/rank/post", {
+              fetch("http://54.180.145.66:8000/rank/post", {
                 method: "POST",
                 body: JSON.stringify({
                   score: this.props.score,
