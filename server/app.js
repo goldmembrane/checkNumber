@@ -5,6 +5,8 @@ const morgan = require("morgan");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+const RankRouter = require("./route/Rank");
+
 app.use(bodyParser.json());
 app.use(morgan("dev"));
 
@@ -19,6 +21,8 @@ app.use(
 app.get("/", (req, res) => {
   res.status(200).send("Success");
 });
+
+app.use("/rank", RankRouter);
 
 app.set("port", port);
 
