@@ -24,7 +24,6 @@ class App extends React.Component {
     };
     this.fetchRanks = this.fetchRanks.bind(this);
   }
-
   componentDidMount() {
     this.fetchRanks();
   }
@@ -95,6 +94,10 @@ class App extends React.Component {
     }));
   }
 
+  handelStart() {
+    this.setState({ isStart: true });
+  }
+
   clearNumber() {
     this.setState({
       number: 0,
@@ -102,6 +105,7 @@ class App extends React.Component {
       isRight: 0,
       formular: null,
       result: "",
+      isStart: false,
     });
   }
 
@@ -110,11 +114,21 @@ class App extends React.Component {
       fetching: true,
     });
     const ranks = await get.getRanks();
-    console.log(ranks);
+
+    console.log(ranks.data);
 
     this.setState({
       rank: this.state.rank.concat(ranks.data),
       fetching: false,
+    });
+  };
+
+  updateRanks = async () => {
+    const ranks = await get.getRanks();
+
+    console.log(ranks.data);
+    this.setState({
+      rank: this.state.rank.concat(ranks.data),
     });
   };
 
@@ -125,6 +139,7 @@ class App extends React.Component {
           score={this.state.isRight}
           defeat={this.state.isWrong}
           clear={this.clearNumber.bind(this)}
+          update={this.updateRanks.bind(this)}
         />
         {this.state.isWrong < 3 ? (
           <div>
