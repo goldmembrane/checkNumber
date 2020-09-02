@@ -20,8 +20,8 @@ const Calculater = (props) => {
         </CountdownCircleTimer>
       </div>
       <div className="formular-box">
-        {eval(props.formular) > props.number - 10 &&
-        eval(props.formular) < props.number + 10
+        {eval(props.formular) > props.number - 5 &&
+        eval(props.formular) < props.number + 5
           ? props.formular
           : props.create(props.formular)}
       </div>
