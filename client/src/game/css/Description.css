@@ -5,14 +5,21 @@
 
 .show-description {
   border: none;
-  background-color: white;
+  border-radius: 15px;
+  background-color: transparent;
   cursor: pointer;
-  width: 300px;
+  width: 150px;
   height: 40px;
   line-height: 40px;
-  font-size: 36px;
+  font-size: 30px;
+  transition: background-color 0.2s;
   margin-top: -300px;
   margin-bottom: -50px;
+  margin-left: 80px;
+}
+
+.show-description:hover {
+  background-color: rgb(1, 100, 70);
 }
 
 .close-desc {

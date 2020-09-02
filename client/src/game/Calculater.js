@@ -15,7 +15,9 @@ const Calculater = (props) => {
           onComplete={() => props.over()}
           size={150}
           strokeWidth={20}
-        />
+        >
+          {({ remainingTime }) => remainingTime}
+        </CountdownCircleTimer>
       </div>
       <div className="formular-box">
         {eval(props.formular) > props.number - 10 &&
