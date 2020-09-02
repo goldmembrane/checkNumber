@@ -23,7 +23,12 @@ function setRandomNumber(props) {
         )}
       </Popup>
       {!props.isOpen ? (
-        <button className="btn btn-light" onClick={props.open}>
+        <button
+          className="btn btn-light"
+          onClick={() => {
+            props.open();
+          }}
+        >
           Rank
         </button>
       ) : null}
@@ -40,7 +45,9 @@ function setRandomNumber(props) {
               <div className="printNumber">{props.number}</div>
               <button
                 className="startBtn"
-                onClick={() => props.create(props.formular)}
+                onClick={() => {
+                  props.create(props.formular);
+                }}
               >
                 Start!
                 <span className="startBtn__inner">

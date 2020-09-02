@@ -53,7 +53,9 @@ class GameOver extends React.Component {
                 .catch((error) => {
                   console.log(error);
                 });
+
               this.props.clear();
+              this.props.update();
             }}
           >
             Save score!
