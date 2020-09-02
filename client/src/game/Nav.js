@@ -9,7 +9,7 @@ function setRandomNumber(props) {
     <div className="setRandomNumber">
       {!props.number ? (
         <div className="setting-box">
-          <p>CheckNumber!</p>
+          <p className="checknumber-title">CheckNumber!</p>
           <Popup
             trigger={<button className="show-description">설명 보기</button>}
             position="right center"
