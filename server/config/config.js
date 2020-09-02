@@ -1,9 +1,9 @@
 module.exports = {
   development: {
-    username: "checknumber",
+    username: "root",
     password: process.env.DATABASE_PASSWORD,
     database: "checknumber",
-    host: "checknumber-database.csmeh7i5hzpa.ap-northeast-2.rds.amazonaws.com",
+    host: "localhost",
     dialect: "mysql",
     logging: false,
   },
